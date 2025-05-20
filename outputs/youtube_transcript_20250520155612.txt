@@ -1,0 +1,506 @@
+Are you preparing for a product security
+interview and looking for typical
+questions and answers? This is the right
+place to to get them. I will walk you
+through how I run my interviews. I will
+tell you exactly what I'm looking for in
+candidates, and especially what sets
+apart the top performers. It's not only
+what you know, but much more
+importantly, how you think, how you
+speak, and whether I can trust you to
+solve real world problems. My name is
+Floren Nuring, and I'm a principal
+security architect.
+I've got 15 years of of experience in
+the tech industry and six of them in
+security. So I know a couple things
+about this. Let's get started. Probably
+prepare for an interview. You need to of
+course understand the expectations of
+the interview. So let me tell you what
+I'm looking for. I'm looking to find a
+candidate that is a great match for the
+position I have available. And I'm going
+to look at different dimensions of the
+candidate. For example, if they have the
+necessary technical skill, I will make
+sure that they have a solid enough
+understanding of security. Obviously, we
+are talking product security here, but
+also that they have a good enough
+understanding of software engineering so
+that they understand how systems are are
+built and what it takes to secure them.
+I've put empathy in this category. This
+might be surprising and I don't mean
+empathy in the sense sorry software
+engineering guy uh that you have to fix
+a security issue but rather empathy in
+the sense that you truly understand what
+you're asking for if you want a security
+control to be implemented that you
+understand how these different layers of
+software fit to together how they create
+risk and how you can reduce risk and
+what it costs to address these
+risks. I want that
+you communicate well
+because you will be talking to lots of
+people. Security is a highly
+collaborative discipline. So I'm looking
+for precise and nuanced language so that
+you can clearly communicate what needs
+to happen and to different stakeholders
+at
+that. I'm going to check for potential
+because you will be filling a role today
+but what will you do in a year or or two
+when you've grown? H how much do I
+believe can you grow? How much curiosity
+do you have? And that is a pretty big
+pre predictor for lots of of of great
+outcomes. Can you ask good questions?
+Can you clarify situations? Can you
+listen to to me as the interviewer? And
+can you listen to a software engineer or
+a team or another st stakeholder? And
+most importantly, can you solve real
+world problems? And in the interview, I
+will provide you with an example problem
+that is as close as possible to a real
+world
+situation. Most interviews also cover
+behavioral aspects. Are you a cultural
+fit for the team or company? And how do
+you resolve conflicts between people?
+But also, how do you make trade-offs
+whether to implement a security control
+or you rather say team please build more
+features? My interviews
+um are
+conversations. I don't do trivia
+context. So I just don't want to know
+that that you know all these things
+because nobody knows all all these
+things. This is a very very broad range
+of topics to to cover and I don't know
+everything either and of course I will
+level set the expectations. So for an
+entry- level role a mid-career or a late
+career a senior or even a staff plus ro
+have wildly different
+expectations. My interview is usually a
+45 minute session. I will first spend
+five minutes on an introduction and the
+purpose of this is to get to know each
+other a little bit. Of course, I will
+have read your resume, but I will
+introduce myself and if you're nervous,
+I'll help you come down by asking me
+really simple stuff and we'll just chat
+a moment.
+Then we have about 35 minutes split into
+two blocks. Question one and question
+two roughly 15 to 20 minutes each where
+I will cover two big areas and then five
+minutes of questions for yourself to ask
+ask me or the interviewer. So let's
+discuss questions to assess technical
+skill. My basic idea is I want to
+understand how deep can you go with me?
+How deep and broad is your
+understanding? And I can cover quite a
+surprising amount of of um of
+vulnerabilities, weaknesses and and best
+practices by using this approach to form
+an basic understanding how much
+technical skill you have. Of course,
+it's not per perfect. It's all only a
+proxy for the real thing. But well,
+interviewing is a bit more arts and
+science, of course. So, how do I do it?
+I'll let's say we'll discuss SQL
+injection as a practical example then I
+will ask you what is SQL injection and
+only if you know that I will ask the
+follow-up question if you don't know it
+I'll look another area where you are
+stronger because I want you to be
+successful in this interview of
+course I will ask you next why does SQL
+injection happen and I'm trying to
+figure out if you have an understanding
+of how SQL injection and source code
+looks like that usually Some string
+concatenation is happening here maybe by
+a string builder or another means but
+still string conc concatenation as the
+foundation. If it's more an offensive
+security role in the product security
+scope I will ask you how to exploit it
+and we'll discuss how to write user
+input that could lead to SQL injection
+and exploit and grant access to the
+database. I will for the more defensive
+roles ask you how to mitigate it and I
+want to hear things about uh control
+characters that need to be escaped. But
+that is certainly not the things that
+software engineers should usually do.
+Instead, they should rely on um
+parameterized queries. How do these look
+like in in code? or maybe the
+alternative an object object relational
+mapping system which is also a fine
+answer but parameter queries is really
+important
+here. It is very surprising that uh many
+product security engineers don't know
+the answer to the question two and don't
+have enough details about question three
+here. So and that especially sets apart
+the junior from the more senior folks or
+may maybe mid mid-level rather. So once
+we've discussed this
+um we need to discuss edge cases because
+SQL queries sometimes need to be created
+in a dynamic fashion. For example, if
+you have a website, a commerce website
+where you can list different products,
+you maybe want them by price or you want
+to filter and that means the SQL needs
+to be parameterized at runtime. How do
+you deal with this edge cage to still
+guarantee uh that it's secure? And that
+is something that I I'm surprised in
+early career folks. So you will
+definitely stand out if you know that um
+and I expect it certainly at the senior
+level. Now we are entering the staff
+plus and principal territory. How to
+mitigate a SQL injection at scale? That
+means not only for a single uh part of a
+product but an entire product or maybe
+many products or all products across an
+enterprise. I'm looking here for a
+discussion how you will will rely on
+other parts of the security organization
+to scale your
+work. Can you work with the um the um
+vulnerability management team to figure
+out does it actually matter? Is this the
+right thing that we should fix at scale?
+Can you work with a platform engineering
+team and a static code analyzers team to
+find these issues at scale to nudge
+developers in the right direction and to
+use and or build them first uh secure by
+design libraries as a payload so that
+you can shift down the security work to
+a library that is centralized and
+accidents no longer happen and you
+basically have eliminated this uh class
+of
+vulnerabilities. Stuff like that is
+really exciting on on that level.
+And what is really interesting is the
+deeper I can go in the more areas that
+tells me you have a whole lot of depth
+and breath too and it implies that you
+had curiosity because most of these
+things are not taught. You really have
+to be curious to look for them actively
+and um figure out all these things. So
+that really gives me a a picture about
+your growth potential
+too. While I'm asking you these
+questions about technical depth, I'm
+also looking at communication and how
+you use language. And let me give you an
+example for wake answer to these
+question. For example, what is secret
+injection? And an answer that I would
+give myself as a security expert. And
+let's remember during an interview
+you're talking to a security expert or
+you might be asked to formulate a
+question for a speific specific group of
+stakeholders. So a very vague answer
+would be for the question what is SQL
+injection? SQL injection is when you put
+weird stuff in into a box in a website.
+The website gets confused and then like
+does bad stuff. It's really bad.
+Basically it doesn't help me as a
+security expert to understand what's
+going on. If I would explain this
+situation to you, I instead would would
+define SQL injection as a SQL injection
+vulnerability occurs when code and data
+are mixed without proper escaping of
+control characters in in the user
+control data and the consequence of that
+is that uh application logic gets
+bypassed and an adversary gets either
+partial or full control over the
+database. I may also provide additional
+context of blind versus non-blind
+injection and stuff like that. Look at
+these two different ways of wording the
+same
+thing. Try to target the second
+description because the interviewers are
+usually security experts. So talk in
+nuance. I have of course different
+expectations here if you're entry level
+versus you're a senior or even a STE
+Steph
+plus
+and don't memorize it. That is really
+really important. Don't memorize uh what
+my answer that I just just gave. Um,
+what I'm really looking for is that you
+understand these concepts and can talk
+in them, can talk about them in
+different contexts because only then if
+you truly understand things, you can
+apply them in different situations. And
+that is what I'm truly looking for and
+not that you can memorize the
+answers to figure out how much potential
+you have. I'm asking exactly this
+question most of the time. And for
+product security engineers, it goes like
+this. You've been assigned to help a
+team building a new login process for
+the entire company. What do you do to
+make it secure
+enough? This question is very
+illdefined. So I first want that you ask
+me clarifying questions. What are we
+actually building? What kind of
+components like client side, server side
+are involved in the database?
+Once you we've also agreed on a basic
+understanding of the text deck and I'll
+usually give the candidates a choice
+here. So so you can choose if you prefer
+no SQL or SQL let me know we'll do do
+that
+and that of course comes with the
+expectation that you know about your
+preferred text a little bit more
+security wise than than other things. So
+I want to see your strengths here. That
+is how I do that and how this also
+becomes a nice conversation as I
+mentioned earlier.
+Once we've figured out what we are
+building, the next step is figuring out
+what could go wrong. And I'm I want to
+see which areas do you prioritize? Do
+you first start with infrastructure,
+application security or product security
+concerns? Do you very early discuss
+things that are likely highly relevant?
+For example, in this context, cross-ite
+scripting and SQL or NoSQL injections or
+do you discuss at length postquantum
+cryptography and other such things that
+are probably not as relevant and they
+are much
+easier and more likely weaknesses that
+we should eliminate first.
+I will also ask
+you um or rather tell tell you that the
+team has made some suboptimal from my
+perspective text decisions. Maybe for
+historic reasons they they are used to
+uh building websites using jQuery. Is
+that an appropriate choice for such a
+project or would you rather prefer
+different approach for example React or
+Angular which are secure by design and
+eliminate cross scripting? Do we need
+more defense and depth like content
+security policies? How do we mitigate
+cross-ite request forgery and a whole
+lot of other issues
+here? And at the end, we'll sum it up a
+little bit to figure out how do you
+prioritize these different things? Where
+do you really draw a hardline and say
+this must be done now before we can
+release to production or some things
+that have more time? Also, how do you
+balance um business aspects for example
+password complexity and multiffactor
+authentication requirements compared to
+the needs of the specific situation here
+and the customer base of of course
+though there's a whole lot of of stuff
+that you
+cover for more entry level folks I will
+guide you a lot through this process so
+while this is a hard question I will
+help you through it and I just want to
+see that you can work with me that you
+go through the journey also that you
+sometimes tell me I don't know because
+if you can't say that when I bring you
+to the edge of your understanding that's
+not good that tells me that you in other
+situations you might make stuff up and I
+don't like that at all just tell me that
+you don't know I'll move on and I'll I
+might even explain it to you we've got
+enough time for stuff like that and then
+we'll move to another area where you are
+hopefully stronger
+For senior folks, this should be fairly
+straightforward. You're doing this
+probably all the time, so you are
+experienced. For staff plus level, just
+like with the technical deaf questions,
+mitigation at scale, I'll ask you the
+same here, but in a way, how you break
+down the problem so that you can
+delegate the problem to multiple people.
+How do you use different parts of the
+security organization to get this under
+control and things like that? Cyber
+security is fundamentally a discipline
+where you have to work with lots of
+people. So it's not only a technical
+problem, it's really a people problem.
+And to figure out whether you are a fit
+for the company, for the company's
+culture, the hiring manager and maybe
+some of the other interviewers as well
+will ask you behavioral
+questions. While I'm mostly focused on
+doing the technical aspects and
+potential, this is also important to
+prepare. And the questions are usually
+in the form tell me about a time when
+you and then here are a couple example
+had a conversation that didn't go
+well what was the
+situation what was the task that you
+were act working on what was the action
+and what was the re result in this stuff
+or tell me about a time when you had to
+give someone critical
+feedback and especially when that went
+wrong or when it went really
+well. Tell me about a time um or tell me
+about something where you have been very
+successful and you've been really proud
+of this
+situation and talk about these
+things prepared. These are probably the
+hardest questions. They are more asked
+at the very largest companies and not at
+the smaller companies. And one that I
+usually ask, this is the last lo last
+last one here and we already had it in
+the opened question by the way. Tell me
+about a time when you had to choose
+between security and product features
+because that always happens. And I want
+to see how you approach this challenge
+to see if you fit into our culture
+because that's really important. the
+people. Even if you are the best at
+security
+ever, I usually have someone that can
+talk to people, listen to them, and has
+empathy than someone who's a jerk and
+tells everyone no or you have to follow
+exactly what I say. This is a two-way
+conversation. You need to build be able
+to build up trust with my teams.
+Otherwise, I don't trust you to work
+with them. In the last couple of
+minutes, usually about five minutes of
+an interview, I will give you a chance
+to ask me
+questions. And you really should take
+this opportunity because I hate it when
+candidates don't ask me questions. This
+looks really bad. You want a new job and
+you are not curious about what it is to
+to work with with me and and the team,
+what our culture is and stuff like that
+or how your success will be measured,
+your impact. So, you should really ask
+questions. What questions? It really
+depends on what you want to understand.
+But here are three areas that you could
+ask about. For example, culture. Uh what
+is the working culture in the security
+orc? How do people work with with each
+other? How do decisions get
+made? You could ask about how is the
+relationship between the security orc
+and the product engineering or and
+that's always an interesting one to to
+get an answer to or it's sometimes tough
+to answer as the interviewer too. But it
+tells you something, something important
+about the job where you'll be spending
+most of of your
+time. You could also ask questions about
+performance. For example, how your
+performance or success will be
+measured or about challenges. There are
+a couple great quest questions here and
+you should certainly do a little bit
+soul finding what you're really curious
+about, but challenges. Um, what kind of
+things do you hope to solve by hiring
+the candidate?
+um what are things that you want to
+solve? Um or or what is the most
+important thing for you right now that
+you would like to solve? I sometimes
+phrase that if I'm asking questions like
+that like myself to to to my own
+leadership. If you had a magic wand and
+you had one wish, what would you do with
+that? You could change anything. Gets
+people thinking. That's fantastic.
+product security and cyber security in
+general is a very very broad field.
+There are so many different things that
+an interviewer could ask you and to
+prepare that you need to focus a little
+bit and the most important
+recommendation when preparing for an
+interview is look at the job
+advertisement. The hiring manager
+intentionally listed out expectations
+there. Go read that, figure out exactly
+what you need to prepare and then use
+what you've learned in this
+video to practice these things. Ask a
+friend to interview you. Do mockin
+interviewers. It helps a lot to practice
+this. Also build up your technical
+understanding. Figure out how to do
+threat modeling better. So cyber
+security is a really broad discipline
+and at the end it takes a lot of
+curiosity and hard work to get good at
+this. And I love it the most if
+candidates show me that they have this
+curiosity or maybe even this passion for
+cyber security to really secure the
+systems and do the right thing for the
+customers to protect the data and to
+protect the business too. And if you can
+show that in the in in the interview,
+you will certainly leave a lasting
+impression with the interviewer. So do
+that and good luck.

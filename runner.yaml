@@ -1,0 +1,19 @@
+runner:
+  name: YouTube Transcript
+  description: Get transcript for a YouTube video via the YouTube Transcript API
+  version: 0.0.1
+
+build:
+  commands: |
+    echo "START: Building the runner"
+    python3 -m pip install -U -r requirements.txt
+    echo "END: Building the runner"
+
+webform:
+  - name: url
+    prompt: URL
+    type: text
+
+launch:
+  type: python
+  command: app.py --url ${url}
