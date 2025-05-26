@@ -1,4 +1,7 @@
 run.sh
+.DS_Store
+.env
+outputs/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

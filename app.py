@@ -1,5 +1,6 @@
 import argparse
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
+from youtube_transcript_api.proxies import GenericProxyConfig
 import re
 import os
 from datetime import datetime
@@ -20,6 +21,58 @@ def get_video_id(url):
             return match.group(1)
     return None
 
+def fetch_transcript_with_fallback(video_id):
+    """
+    Tries to fetch transcript first with proxy, then direct if proxy fails.
+    Returns transcript_list if successful, None if both fail.
+    """
+    # Proxy configuration from environment variables
+    PROXY_USERNAME = os.getenv("PROXY_USERNAME")
+    PROXY_PASSWORD = os.getenv("PROXY_PASSWORD")
+    PROXY_URL = os.getenv("PROXY_URL")
+    
+    # Check if all proxy environment variables are set
+    if not all([PROXY_USERNAME, PROXY_PASSWORD, PROXY_URL]):
+        print("Warning: Proxy environment variables not fully configured. Skipping proxy attempt.")
+        print("Required env vars: PROXY_USERNAME, PROXY_PASSWORD, PROXY_URL")
+        # Skip proxy attempt and go directly to direct connection
+        try:
+            print("Attempting direct connection...")
+            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+            print("Successfully connected directly.")
+            return transcript_list, YouTubeTranscriptApi
+        except Exception as e:
+            print(f"Direct connection failed: {e}")
+            raise e
+    
+    PROXY_HTTP = f"http://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_URL}"
+    PROXY_HTTPS = f"https://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_URL}"
+    
+    # First try with proxy
+    try:
+        print("Attempting to fetch transcript using proxy...")
+        proxy_config = GenericProxyConfig(
+            http_url=PROXY_HTTP,
+            https_url=PROXY_HTTPS,
+        )
+        ytt_api = YouTubeTranscriptApi(proxy_config=proxy_config)
+        transcript_list = ytt_api.list_transcripts(video_id)
+        print("Successfully connected using proxy.")
+        return transcript_list, ytt_api
+    except Exception as e:
+        print(f"Proxy connection failed: {e}")
+        print("Falling back to direct connection...")
+    
+    # If proxy fails, try direct connection
+    try:
+        print("Attempting direct connection...")
+        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        print("Successfully connected directly.")
+        return transcript_list, YouTubeTranscriptApi
+    except Exception as e:
+        print(f"Direct connection also failed: {e}")
+        raise e
+
 def main():
     parser = argparse.ArgumentParser(description="Fetches the transcript for a YouTube video.")
     parser.add_argument("--url", required=True, help="The URL of the YouTube video (e.g., \'\'\'https://www.youtube.com/watch?v=iYSaXtFvBwQ\'\'\')")
@@ -34,7 +87,7 @@ def main():
 
     try:
         print(f"Fetching transcript for video ID: {video_id}...")
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        transcript_list, api_instance = fetch_transcript_with_fallback(video_id)
         transcript_to_fetch = None
 
         # 1. Try manually created English
